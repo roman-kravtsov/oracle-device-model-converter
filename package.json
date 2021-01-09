@@ -1,0 +1,12 @@
+{
+  "name": "oracle-device-model-converter",
+  "version": "1.0.0",
+  "description": "Oracle Device Model Converter to Thing Model",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js ./examples/oracle-device-model.json"
+  },
+  "author": "Roman Kravtsov",
+  "license": "ISC"
+}

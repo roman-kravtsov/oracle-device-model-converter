@@ -1,0 +1,129 @@
+{
+	"properties": {
+		"PumpStatus": {
+			"name": "PumpStatus",
+			"type": "boolean",
+			"writable": false
+		},
+		"Tank101MaximumLevelStatus": {
+			"name": "Tank101MaximumLevelStatus",
+			"type": "boolean",
+			"writable": false
+		},
+		"Tank101MinimumLevelStatus": {
+			"name": "Tank101MinimumLevelStatus",
+			"type": "boolean",
+			"writable": false
+		},
+		"Tank101OverflowStatus": {
+			"name": "Tank101OverflowStatus",
+			"type": "boolean",
+			"writable": false
+		},
+		"Tank102LevelValue": {
+			"name": "Tank102LevelValue",
+			"type": "number",
+			"writable": false
+		},
+		"Tank102OverflowStatus": {
+			"name": "Tank102OverflowStatus",
+			"type": "boolean",
+			"writable": false
+		},
+		"ValveStatus": {
+			"name": "ValveStatus",
+			"type": "boolean",
+			"writable": false
+		}
+	},
+	"actions": {
+		"CloseValve": {
+			"name": "CloseValve",
+			"input": {
+				"type": "boolean"
+			}
+		},
+		"OpenValve": {
+			"name": "OpenValve",
+			"description": "Opens the valve",
+			"input": {
+				"type": "boolean"
+			}
+		},
+		"StartPump": {
+			"name": "StartPump",
+			"input": {
+				"type": "boolean"
+			}
+		},
+		"StopPump": {
+			"name": "StopPump",
+			"input": {
+				"type": "boolean"
+			}
+		}
+	},
+	"events": {
+		"Tank101Overflow": {
+			"name": "Tank101Overflow",
+			"description": "Tank101 Overflow",
+			"type": "object",
+			"properties": {
+				"Tank102Level": {
+					"name": "Tank102Level",
+					"optional": false,
+					"type": "number"
+				},
+				"PumpStatus": {
+					"name": "PumpStatus",
+					"optional": false,
+					"type": "boolean"
+				},
+				"ValveStatus": {
+					"name": "ValveStatus",
+					"optional": false,
+					"type": "boolean"
+				}
+			}
+		},
+		"Tank102Overflow": {
+			"name": "Tank102Overflow",
+			"description": "Tank102 Overflow",
+			"type": "object",
+			"properties": {
+				"Tank102Level": {
+					"name": "Tank102Level",
+					"optional": false,
+					"type": "number"
+				},
+				"PumpStatus": {
+					"name": "PumpStatus",
+					"optional": false,
+					"type": "boolean"
+				},
+				"ValveStatus": {
+					"name": "ValveStatus",
+					"optional": false,
+					"type": "boolean"
+				}
+			}
+		},
+		"Tank101CriticalLevel": {
+			"name": "Tank101CriticalLevel",
+			"description": "Tank101Level<Tank101MinimumValue or  Tank101Level>Tank101MaximumValue",
+			"type": "object",
+			"properties": {
+				"Tank101MaximumLevel": {
+					"name": "Tank101MaximumLevel",
+					"optional": true,
+					"type": "boolean"
+				},
+				"Tank101MinimumLevel": {
+					"name": "Tank101MinimumLevel",
+					"optional": true,
+					"type": "boolean"
+				}
+			}
+		}
+	}
+}
